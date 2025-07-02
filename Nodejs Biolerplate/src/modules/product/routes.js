@@ -1,5 +1,7 @@
-import { Router } from "express";
+// import express, { Router } from "express";
 
-const router = Router();
+// const router = Router();
 
-export default router;
+// router.get("/", catego);
+
+// export default router;

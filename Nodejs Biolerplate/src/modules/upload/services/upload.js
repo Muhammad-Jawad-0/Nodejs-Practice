@@ -10,34 +10,30 @@ cloudinary.config({
 });
 
 const uploadFile = async (file) => {
+  const resizePath = `src/modules/upload/files/resize-${file.filename}`;
+  const filePath = `src/modules/upload/files/${file.filename}`;
   return new Promise(async (resolve, reject) => {
-    const resizePath = `src/modules/upload/files/resize-${file.filename}`;
-    const filePath = `src/modules/upload/files/${file.filename}`;
-
     sharp(filePath)
-      .jpeg({ quality: 40 })
-      .toFile(`${resizePath}/resize-${file.filename}`, async (err, info) => {
+      .jpeg({ quality: 30 })
+      .toFile(resizePath, async (err, info) => {
         const uploadResult = await cloudinary.uploader
           .upload(resizePath, {
             public_id: `STORE/${file.filename}`,
-          })
-          .catch((error) => {
-            console.log(error);
-            return reject();
-          });
-
-        if (uploadResult) {
-          fsExtra.removeSync(filePath);
-          resolve(uploadResult);
-        } else {
-          reject();
-        }
       });
-    // if (err) {
-    //   console.log(err, "<<< err");
-    // } else {
-    //   console.log(info, "<< info");
-    // }
+    if (uploadResult) {
+      fsExtra.removeSync(filePath);
+      fsExtra.removeSync(resizePath);
+      resolve(uploadResult);
+    } else {
+      reject();
+    }
+      if (err) {
+    console.log(err, "<<< err");
+  } else {
+    console.log(info, "<< info");
+  }
+  });
+
   });
 };
 

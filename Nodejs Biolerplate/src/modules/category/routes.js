@@ -1,14 +1,13 @@
-import { Router } from "express";
+import express, { Router } from "express";
+import postControler from "./controllers/post.js";
 import getController from "./controllers/get.js";
-import postController from "./controllers/post.js";
 import deleteController from "./controllers/delete.js";
 import updateController from "./controllers/update.js";
-import { authAuthentication } from "../../helper/index.js";
 
 const router = Router();
 
-router.get("/", authAuthentication, getController);
-router.post("/", postController);
+router.post("/", postControler);
+router.get("/", getController);
 router.delete("/:id", deleteController);
 router.put("/:id", updateController);
 
