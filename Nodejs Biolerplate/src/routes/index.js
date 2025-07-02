@@ -1,6 +1,6 @@
 import { Router } from "express";
 import userRoutes from "../modules/user/routes.js";
-// import productRoutes from "../modules/product/routes.js";
+import productRoutes from "../modules/product/routes.js";
 import uploadRoutes from "../modules/upload/routes.js";
 import categoryRoutes from "../modules/category/routes.js"
 
@@ -35,7 +35,7 @@ const upload = multer({ storage });
 
 
 router.use("/user", userRoutes);
-// router.use("/product", productRoutes);
+router.use("/product", productRoutes);
 router.use("/category", categoryRoutes);
 router.use("/upload", upload.single("file"), uploadRoutes);
 
