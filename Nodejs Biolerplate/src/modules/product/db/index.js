@@ -25,8 +25,8 @@ const getAllPopulatedData = async (key) => await Modal.find().populate(key);
 
 const getAggregate = async (q) => await Modal.aggregate(q);
 
-const addData = (data) =>
-  new Modal(data).save().then((data) => data.toObject());
+const addData = async (data) =>
+  await new Modal(data).save().then((data) => data.toObject());
 
 const deleteById = async (id) => await Modal.findByIdAndDelete(id);
 const updateById = async (id, data) => await Modal.findByIdAndUpdate(id, data);

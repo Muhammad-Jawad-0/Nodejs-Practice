@@ -17,7 +17,12 @@ const dataSchema = new Schema(
     image: {
       type: String,
       required: true,
-    }
+    },
+    category: {
+      type: mongoose.Schema.ObjectId,
+      ref: "Category",
+      // required: true,
+    },
   },
   {
     timestamps: true,

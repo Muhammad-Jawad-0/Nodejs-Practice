@@ -1,5 +1,5 @@
 import { getAllPopulatedData } from "../db/index.js";
 
-const getDataServices = async () => await getAllPopulatedData("category");
+const getDataServices =  () =>  getAllPopulatedData("category");
 
 export default getDataServices;
