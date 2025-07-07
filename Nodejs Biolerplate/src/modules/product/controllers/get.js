@@ -6,7 +6,7 @@ import getDataServices from "../services/get.js";
 
 const getController = async (req, res) => {
   try {
-    const users = await getDataServices();
+    const users = await getDataServices(req.query);
     res
       .status(200)
       .send({ status: 200, message: GET_DATA_MESSAGE, data: users });

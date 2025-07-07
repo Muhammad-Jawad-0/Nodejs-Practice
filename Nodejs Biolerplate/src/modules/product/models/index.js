@@ -29,5 +29,5 @@ const dataSchema = new Schema(
   }
 );
 
-const Modal = mongoose.model("Product", dataSchema);
+const Modal = mongoose.model("Assets", dataSchema);
 export default Modal;

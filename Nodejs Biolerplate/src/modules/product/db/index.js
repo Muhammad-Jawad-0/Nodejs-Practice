@@ -23,7 +23,7 @@ const getAllPopulatedData = async (key) => await Modal.find().populate(key);
 
 // aggregate DB
 
-const getAggregate = async (q) => await Modal.aggregate(q);
+const getAggregate = async (q) => await Modal.aggregate(q); //  aggregate takes [{}] arrays of object...
 
 const addData = async (data) =>
   await new Modal(data).save().then((data) => data.toObject());
