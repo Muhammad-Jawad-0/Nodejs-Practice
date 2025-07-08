@@ -16,10 +16,10 @@ const sendEmail = () => {
 
   // Email options
   const mailOptions = {
-    from: "mdjawad11223344@gmail.com",
-    to: "muhammaddjawad.0@gmail.com",
-    subject: "👋 Hello from Node.js 🚀 sending email from nodemailer",
-    text: "This is a test email sent from Node.js using nodemailer. 📧💻",
+    from: "mdjawad11223344@gmail.com",      //muhammaddjawad.0@gmail.com
+    to: "muhammaddjawad.0@gmail.com",       //mdjawad11223344@gmail.com
+    subject: "👋 Hello from Node.js 🚀 Nodemailer Maze ka ha",
+    text: "Kafi acha experience raha bhai... 📧💻",
   };
 
   // Send the email
